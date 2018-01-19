@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <cm-objective></cm-objective>
+    <app-objective-list><i>Loading</i></app-objective-list>
     <router-view/>
   </div>
 </template>
