@@ -4,6 +4,7 @@
             <app-objective :objective="objective" :key="'objective_' + index"><i>Loading</i></app-objective>
             <br>
         </div>
+        <button class="btn btn-primary" @click="getData">Get Data</button>
     </div>
 </template>
 
@@ -35,6 +36,15 @@
                     assessment: -1
                     }                                        
                 ]
+            }
+        },
+        methods: {
+            getData() {
+                this.$http.get('http://localhost:5000/api/objectives')
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => console.log(data));
             }
         }
     }
